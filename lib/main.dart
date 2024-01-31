@@ -1,8 +1,8 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:temp/contact_list.dart';
 import 'package:temp/country_list.dart';
+import 'package:temp/date_functionality.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class Country {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ContactList(),
+      home: const DateFunctionality(),
     );
   }
 }
@@ -93,10 +93,9 @@ class _ListViewDemoState extends State<ListViewDemo> {
                   onPressed: selectedNewList.isNotEmpty?
                       () {
                     for(int i = 0;i<selectedNewList.length;i++){
-                      log("${i}");
+                      log("$i");
                       List<Country> newDataList=[];
                       for(int j=0;j<selectedNewList.length;j++){
-
                         int position = (j+i) % selectedNewList.length;
                         log("i=$i j=$j position ==$position");
                         newDataList.add(selectedNewList[position]);
